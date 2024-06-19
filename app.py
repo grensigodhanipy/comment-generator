@@ -7,8 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Replace YOUR_GEMINI_API_KEY with your actual Gemini API key
-genai.configure(api_key='AIzaSyAO2ohK36Fc-DV_Ryi1q1CU-aFxQmoA0tw')
+genai.configure(api_key='YOUR_GEMINI_API_KEY')
 
 CUSTOM_OPTIONS_FILE = 'custom_options.json'
 
@@ -37,7 +36,6 @@ def generate_comment(post_content, style, custom_prompt=None):
         prompt = f"Write a comment about this post: {post_content}"
 
     response = genai.generate_text(prompt=prompt, temperature=0.7)
-    # Check if the response has a 'candidates' attribute
     if hasattr(response, 'candidates'):
         candidates = response.candidates
         if candidates:
@@ -85,4 +83,3 @@ def get_custom_options():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
