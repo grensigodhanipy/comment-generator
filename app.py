@@ -35,8 +35,6 @@ def generate_comment(post_content, style, custom_prompt=None):
         prompt = f"Be a compassionate LinkedIn user. Craft a heartfelt and empathetic comment in response to this LinkedIn post, demonstrating understanding and support for the author's perspective. Make sure not to repeat what has already been said in the post. Use new words, phrases, ideas and insights: {post_content}"
     else:
         prompt = f"Write a comment about this post: {post_content}"
-    
-    print("hello")
 
     response = genai.generate_text(prompt=prompt, temperature=0.7)
     # Check if the response has a 'candidates' attribute
