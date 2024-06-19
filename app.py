@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-genai.configure(api_key='YOUR_GEMINI_API_KEY')
+genai.configure(api_key='AIzaSyAO2ohK36Fc-DV_Ryi1q1CU-aFxQmoA0tw')
 
 CUSTOM_OPTIONS_FILE = 'custom_options.json'
 
